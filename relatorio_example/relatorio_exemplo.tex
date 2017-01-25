@@ -1,0 +1,118 @@
+% ----------------------------------------------------------------------------------------------------- %
+% Manual da Classe UFTeX
+% 
+% Versão 1.1:   Março 2016
+%
+% Criado por:   Tiago da Silva Almeida
+% Revisado por: Tiago da Silva Almeida
+%               Rafael Lima de Carvalho
+%               Ary Henrique Morais de Oliveira
+%
+% http://uftex.sourceforge.net
+% ----------------------------------------------------------------------------------------------------- %
+
+\documentclass[report]{uftex}
+% ---- Esse comando cria o nome uftex estilizado
+\newcommand\uftex{UF\TeX}
+%\usepackage[numbers]{natbib}
+\usepackage{lipsum}
+\usepackage[num,abnt-and-type=e]{abntex2cite}                    % Citações padrão ABNT
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{}%
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+    
+% ----  Esse comandos são necessário no pré-ambulo para a impressão da lista de lista abreviatuas e de símbolos
+\makelosymbols
+\makeloabbreviations
+% ---- Início do documento
+\begin{document}
+  % ---- Descrição do título do trabalho 
+  \title{Titulo do trabalho}
+  % ---- Nome do autor ou autores do trabalho
+  \author{Autor}{Sobrenome}
+  \author{Autor}{Sobrenome 2}
+  \class{Sistemas Digitais}
+  % ---- Nome do orientador do trabalho. O último campo representa o título do professor
+  \advisor{Prof.}{Tiago}{da Silva Almeida}{M.Sc.}
+  % ---- Departamento representa o curso ao qual o trabalho está sendo apresentado. Descrito por meio de duas iniciais do curso
+  \department{CC}
+  % ---- Data da apresentação do trabalho
+  \date{03}{2016}
+  % ---- Palavras-chaves em português do trabalho
+  \keyword{\LaTeX}
+  \keyword{\uftex}
+  \keyword{Trabalho de Conclusão de Curso}
+  \keyword{Redação Científica}
+  \keyword{Extensão Universitária}
+  % ---- Palavras-chaves em inglês do trabalho
+  \foreignkeyword{\LaTeX}
+  \foreignkeyword{\uftex}
+  \foreignkeyword{Bachelor Thesis}
+  \foreignkeyword{Scientific Writing}
+  \foreignkeyword{University Extension}
+  % ---- Comando responsável por criar a capa do trabalho e/ou folha de resto conforme a configuração exigida
+  \maketitle
+  % ---- Esse comando marca o inicio dos elementos pré-textuais, e adiciona a numeração de páginas em algarismos romanos em caixa baixa
+  \frontmatter
+  % ---- Cria uma dedicatória ao trabalho. OPCIONAL
+  %\dedication{A algu\'em cujo valor \'e digno desta dedicat\'oria.}
+  % ---- Cria os agradecimentos do trabalho. OPCIONAL
+  %\begin{acknowledgement}
+  %Gostaria de agradecer a todos.
+  %\end{acknowledgement}
+  % ---- Cria o resumo em idioma escolhido pelo usuário, no caso em português. OBRIGATÓRIO
+  \begin{abstract}
+\lipsum[1]
+  \end{abstract}
+  % ---- Cria o resumo em idioma estrangeiro, no caso em inglês. OBRIGATÓRIO
+  \begin{foreignabstract}
+  In this work, we present ...
+  \end{foreignabstract}
+  \printlosymbols  
+  \printloabbreviations
+  % ---- Cria a lista de figuras. OPCIONAL
+  %\listoffigures
+  % ---- Cria a lista de tabelas. OPCIONAL
+  %\listoftables 
+  % ---- Cria o sumário. OBRIGATÓRIO
+  \tableofcontents % sumário
+% --- Marca o inicio dos elementos textuais. Capítulos.
+\mainmatter
+% ---- Defino o espaçamento de um e meio centímetros
+\onehalfspacing
+% ----------------------------------------------------------------------------------------------------- %
+% Capítulos do trabalho
+% ----------------------------------------------------------------------------------------------------- %
+\chapter{Introdução}
+\label{sec:introducao}
+% ALTERAR texto desta seção
+\noindent 
+\lipsum[1]
+
+\section{Licença}
+\label{sec:Licenca}
+
+\noindent 
+\lipsum[1]
+
+\backmatter 
+\singlespacing   % espaçamento simples
+% ----------------------------------------------------------------------------------------------------- %
+% Bibliografia
+%\bibliographystyle{plainnat} % citação bibliográfica alpha
+\bibliography{manual_uftex}
+
+\appendix
+
+\end{document}

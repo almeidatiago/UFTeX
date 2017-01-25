@@ -1,0 +1,229 @@
+% ----------------------------------------------------------------------------------------------------- %
+% Arquivo LaTeX de exemplo de TCC a ser apresentados à Ciência da Computação da UFT - Palmas
+% 
+% Versão 1.1:   Março 2016
+%
+% Criado por:   Tiago da Silva Almeida
+% Revisado por: Tiago da Silva Almeida
+%               Rafael Lima de Carvalho
+%               Ary Henrique Morais de Oliveira
+%
+% http://uftex.sourceforge.net 
+% ----------------------------------------------------------------------------------------------------- %
+
+\documentclass[tcc2]{uftex}
+	
+\usepackage[num]{abntex2cite}
+\renewcommand{\backrefpagesname}{}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+  \title{Estudo da vida marinha}
+  \foreigntitle{Thesis Title}
+  \author{Tiago da Silva}{Almeida}
+  
+  \advisor{Prof.}{José}{Mendonça}{D.Sc.}
+  \advisor{Prof.}{Marcos}{da Oliveira}{M.Sc.}
+
+  \department{EC}
+  \date{03}{2016}
+
+  \keyword{Primeira palavra-chave}
+  \keyword{Segunda palavra-chave}
+  \keyword{Terceira palavra-chave}
+  \keyword{Quarta palavra-chave}
+
+  \foreignkeyword{First keyword}
+  \foreignkeyword{Second keyword}
+  \foreignkeyword{Third keyword}
+  \foreignkeyword{Fourth keyword}
+
+  \maketitle
+
+  \frontmatter
+  % ----------------------------------------------------------------------------------------------------- %
+  %  Este trecho deve ser inserido somente no caso do TCC2 já na versão FINAL
+  % ----------------------------------------------------------------------------------------------------- %
+  %\includepdf{ficha_catalografica}
+  %\includepdf{ata_de_aprovacao}
+  % ----------------------------------------------------------------------------------------------------- %
+  \dedication{A algu\'em cujo valor \'e digno desta dedicat\'oria.}
+
+  \begin{acknowledgement}
+  Gostaria de agradecer a todos.
+  \end{acknowledgement}
+
+  \begin{abstract}
+  Apresenta-se, nesta tese, ...
+  \end{abstract}
+
+  \begin{foreignabstract}
+  In this work, we present ...
+  \end{foreignabstract}
+
+
+\printlosymbols  
+\printloabbreviations
+\listoffigures            
+\listoftables 
+\tableofcontents 
+
+\mainmatter
+\onehalfspacing
+% ----------------------------------------------------------------------------------------------------- %
+% Capítulos do trabalho
+% ----------------------------------------------------------------------------------------------------- %
+\chapter{Introdução}
+\label{cap:introducao}
+
+\noindent Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto. \abbrev{IDE}{\textit{Integrated Development Environment}}\symbl{$\Pi$}{Produtório de algum valor}
+
+Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto.
+
+\begin{quote}
+``Exemplo de citação direta com mais de três linhas''.
+\end{quote}
+
+\section{Exemplo de Código-Fonte em Java}
+\label{sec:exemplo_codigo_fonte}
+
+\noindent Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto. \abbrev{ABNT}{Associação Brasileira de Normas Técnicas}\symbl{$\in$}{Pertence à}
+
+\begin{lstlisting}[language=Java]
+for(i = 0; i < 20; i++)
+{
+    // Comentario 
+    System.out.println("Mensagem...");
+}
+\end{lstlisting}
+
+\section{Exemplo de tabela}
+\label{sec:exemplo_tabela}
+
+\noindent Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto \ref{tab:1}, \ref{tab:2}, \ref{tab:3} e \ref{tab:4}.
+
+\begin{table}[!h]
+\caption{Exemplo 1.}\label{tab:1}
+\begin{tabular}{ l c r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+\end{table}
+
+Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto. \abbrev{PC}{\textit{Personal Computer}}\symbl{$\Sigma$}{Somatório de algum valor}
+
+\begin{table}[!h]
+\caption{Exemplo 2.}\label{tab:2}
+\begin{tabular}{ |l|l| }
+  \hline
+  \multicolumn{2}{|c|}{Team sheet} \\
+  \hline
+  GK & Paul Robinson \\
+  LB & Lucas Radebe \\
+  DC & Michael Duberry \\
+  DC & Dominic Matteo \\
+  RB & Dider Domi \\
+  MC & David Batty \\
+  MC & Eirik Bakke \\
+  MC & Jody Morris \\
+  FW & Jamie McMaster \\
+  ST & Alan Smith \\
+  ST & Mark Viduka \\
+  \hline
+\end{tabular}
+\end{table}
+
+Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto
+
+\begin{table}[!h]
+\caption{Exemplo 3.}\label{tab:3}
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+\end{table}
+
+Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto
+
+\begin{table}[!h]
+\caption{Exemplo 4.}\label{tab:4}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.  
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells 
+    across most of Scotland and Northern Ireland, 
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning. 
+    Conditions will improve by early afternoon and continue 
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto
+%% ------------------------------------------------------------------------- %%
+\chapter{Conclusões}
+\label{cap:conclusoes}
+
+\noindent Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto.
+
+
+\backmatter 
+\singlespacing   
+% ----------------------------------------------------------------------------------------------------- %
+% Bibliografia
+% ----------------------------------------------------------------------------------------------------- %
+
+\bibliography{tcc_exemplo}
+
+% ----------------------------------------------------------------------------------------------------- %
+% Anexos
+% ----------------------------------------------------------------------------------------------------- %
+\appendix
+\onehalfspacing
+
+\chapter{Sequências}
+\label{ape:sequencias}
+
+\noindent Texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto.
+
+\end{document}
