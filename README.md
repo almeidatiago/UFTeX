@@ -89,7 +89,7 @@ As palavras chaves em língua estrangeira também devem ser descritas para cria�
 Este comando foi adicionado por conveniência. O texto de entrada é colocado no lado inferior direito de uma página em branco. Deve ser enfatizado e em tamanho normal. A forma correta de utilizar esta macro é:
 
 ```latex
-dedication{A alguém cujo valor é digno desta dedicatória.}
+\dedication{A alguém cujo valor é digno desta dedicatória.}
 ```
 e a mesma deverá vir logo abaixo do comando ```\frontmatter```.
 
