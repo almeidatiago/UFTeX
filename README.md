@@ -138,8 +138,8 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
   \foreigntitle{Thesis Title}
   \author{Tiago da Silva}{Almeida}
   
-  \advisor{Prof.}{José}{Mendonça}{D.Sc.}
-  \advisor{Prof.}{Marcos}{da Oliveira}{M.Sc.}
+  \advisor{Prof.}{José}{Mendonça}{Dr.}
+  \advisor{Prof.}{Marcos}{da Oliveira}{Me.}
 
   \department{EC}
   \date{03}{2016}

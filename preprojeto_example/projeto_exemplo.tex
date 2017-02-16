@@ -13,7 +13,10 @@
 
 \documentclass[tcc1,project]{uftex}	
 
-\usepackage[num]{abntex2cite}	% Citações padrão ABNT
+\usepackage[num]{abntex2cite}
+\renewcommand{\backrefpagesname}{}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{}
 
 \begin{document}
   \title{Modelo de plano de trabalho para a disciplina de projeto de graduação II do curso de ciência da computação}
@@ -138,7 +141,6 @@ A descrição das atividades remanescentes está listada na Tabela \ref{tb:ativi
 % ----------------------------------------------------------------------------------------------------- %
 % Bibliografia
 % ----------------------------------------------------------------------------------------------------- %
-
 \bibliography{projeto_exemplo}
 
 \end{document}

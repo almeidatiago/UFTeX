@@ -14,24 +14,13 @@
 \documentclass[report]{uftex}
 % ---- Esse comando cria o nome uftex estilizado
 \newcommand\uftex{UF\TeX}
-%\usepackage[numbers]{natbib}
+
 \usepackage{lipsum}
-\usepackage[num,abnt-and-type=e]{abntex2cite}                    % Citações padrão ABNT
-% Define os textos da citação
-%\renewcommand*{\backrefalt}[4]{}%
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
+
+\usepackage[num]{abntex2cite}
+\renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
-    
+\renewcommand*{\backrefalt}[4]{}
 % ----  Esse comandos são necessário no pré-ambulo para a impressão da lista de lista abreviatuas e de símbolos
 \makelosymbols
 \makeloabbreviations
