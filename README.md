@@ -20,9 +20,8 @@ Você pode especificar a opção de documento escolhida através do
 \documentclass[opções]{uftex}
 ```
 
-```diff
-É importante destacar que as opções: **report**, **tcc**, **tcc1** e **tcc2** são conflitantes e não devem ser utilizadas em conjunto. in red
-```
+> É importante destacar que as opções: **report**, **tcc**, **tcc1** e **tcc2** são conflitantes e não devem ser utilizadas em conjunto. in red
+
 
 ## Estrutura Visual
 
