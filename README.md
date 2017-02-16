@@ -123,26 +123,50 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
 
 ```latex
 \documentclass[tcc]{uftex}
-
+% --------------------------------------------------------------------- %
 \usepackage[num]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{}
 % ----  Esse comandos são necessário no pré-ambulo para a impressão da
-%lista de lista abreviatuas e de símbolos
+% lista de lista abreviatuas e de símbolos
 \makelosymbols
 \makeloabbreviations
 % ---- Início do documento
 \begin{document}
-  .
-  .
-  .
+  \title{Estudo da vida marinha}
+  \foreigntitle{Thesis Title}
+  \author{Tiago da Silva}{Almeida}
+  
+  \advisor{Prof.}{José}{Mendonça}{D.Sc.}
+  \advisor{Prof.}{Marcos}{da Oliveira}{M.Sc.}
+
+  \department{EC}
+  \date{03}{2016}
+
+  \keyword{Primeira palavra-chave}
+  \keyword{Segunda palavra-chave}
+  \keyword{Terceira palavra-chave}
+  \keyword{Quarta palavra-chave}
+
+  \foreignkeyword{First keyword}
+  \foreignkeyword{Second keyword}
+  \foreignkeyword{Third keyword}
+  \foreignkeyword{Fourth keyword}
   % ---- Comando responsável por criar a capa do trabalho e/ou folha de
   %resto conforme a configuração exigida
   \maketitle
   % ---- Esse comando marca o inicio dos elementos pré-textuais, e
   %adiciona a numeração de páginas em algarismos romanos em caixa baixa
   \frontmatter
+  
+  % ----------------------------------------------------------------------------------------------------- %
+  %  Este trecho deve ser inserido somente no caso do TCC2 já na versão FINAL
+  % ----------------------------------------------------------------------------------------------------- %
+  %\includepdf{ficha_catalografica}
+  %\includepdf{ata_de_aprovacao}
+  % ----------------------------------------------------------------------------------------------------- %
+  
   % ---- Cria uma dedicatória ao trabalho. OPCIONAL
   \dedication{A algu\'em cujo valor \'e digno desta dedicat\'oria.}
   % ---- Cria os agradecimentos do trabalho. OPCIONAL
@@ -239,24 +263,25 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 
 ```latex
 \documentclass[tcc2]{uftex}
-	
+% --------------------------------------------------------------------- %
 \usepackage[num]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{}
-
+% ----  Esse comandos são necessário no pré-ambulo para a impressão da
+% lista de lista abreviatuas e de símbolos
 \makelosymbols
 \makeloabbreviations
-
+% ---- Início do documento
 \begin{document}
 .
 .
 .
 \backmatter 
 \singlespacing   
-% ----------------------------------------------------------------------------------------------------- %
+% --------------------------------------------------------------------- %
 % Bibliografia
-% ----------------------------------------------------------------------------------------------------- %
+% --------------------------------------------------------------------- %
 \bibliography{exemplo}
 .
 .
