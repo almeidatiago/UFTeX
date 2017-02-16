@@ -421,8 +421,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```latex
 @Misc{gridftp,
  author   = {William Allcock},
- title    = {{GridFTP} protocol specification. {Global Grid Forum}
-            Recommendation ({GFD}.20)},
+ title    = {{GridFTP} protocol specification. {Global Grid Forum} Recommendation ({GFD}.20)},
  year     = {2003}
 }
 ```
