@@ -289,3 +289,152 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 > É necessária a inclusão na mesma pasta do projeto os pacotes do `abntex2` para geração das referências bibliográficas de acordo com o padrão _ABNT_.
+
+### Algumas Referências
+
+É muito recomendável a utilização de arquivos _bibtex_ para o gerenciamento de referências a trabalhos. Exemplos de referências com a tag:
+
+- @book: 
+```latex
+@book{JW82,
+ author   = {Richard A. Johnson and Dean W. Wichern},
+ title    = {Applied Multivariate Statistical Analysis},
+ publisher= {Prentice-Hall},
+ year     = {1983}
+}
+```
+
+- @article (artigos em revistas e jornais): 
+```latex
+@article{MenaChalco08,
+ author   = {Jesús P. Mena-Chalco and Helaine Carrer and Yossi Zana and 
+            Roberto M. Cesar-Jr.},
+ title    = {Identification of protein coding regions using the modified 
+            {G}abor-wavelet transform},
+ journal  = {IEEE/ACM Transactions on Computational Biology and Bioinformatics},
+ volume   = {5},
+ pages    = {198-207},
+ year     = {2008},
+}
+```
+
+- @inProceedings (artigos em congressos): 
+```latex
+@inproceedings{alves03:simi,
+ author   = {Carlos E. R. Alves and Edson N. Cáceres and Frank Dehne and 
+            Siang W. Song},
+ title    = {A Parallel Wavefront Algorithm for Efficient Biological 
+            Sequence Comparison},
+ booktitle= {ICCSA '03: The 2003 International Conference on Computational 
+            Science and its Applications},
+ year     = {2003},
+ pages    = {249-258},
+ month    = May,
+ publisher= {Springer-Verlag}
+}
+```
+
+- @incollection (coleção de livros, exemplo, As Crônicas de Gelo e Fogo): 
+```latex
+@InCollection{bobaoglu93:concepts,
+ author   = {Ozalp Babaoglu and Keith Marzullo},
+ title    = {Consistent Global States of Distributed Systems: Fundamental 
+             Concepts and Mechanisms},
+ editor   = {Sape Mullender},
+ booktitle= {Distributed Systems},
+ edition  = {segunda},
+ year     = {1993},
+ pages    = {55-96}
+}
+```
+
+- @conference (Congresso): 
+```latex
+@Conference{bronevetsky02,
+ author   = {Greg Bronevetsky and Daniel Marques and Keshav Pingali and 
+            Paul Stodghill},
+ title    = {Automated application-level checkpointing of {MPI} programs},
+ booktitle= {PPoPP '03: Proceedings of the 9th ACM SIGPLAN Symposium on Principles
+            and Practice of Parallel Programming},
+ year     = {2003},
+ pages    = {84-89}
+}
+```
+
+- @phdThesis: 
+```latex
+@PhdThesis{garcia01:PhD,
+ author   = {Islene C. Garcia},
+ title    = {Visões Progressivas de Computações Distribuídas},
+ school   = {Instituto de Computação, Universidade de Campinas, Brasil},
+ year     = {2001},
+ month    = {Dezembro}
+}
+```
+
+- @mastersThesis: 
+```latex
+@MastersThesis{schmidt03:MSc,
+ author   = {Rodrigo M. Schmidt},
+ title    = {Coleta de Lixo para Protocolos de \emph{Checkpointing}},
+ school   = {Instituto de Computação, Universidade de Campinas, Brasil},
+ year     = {2003},
+ month    = Oct
+}
+```
+
+- @techreport: 
+```latex
+@Techreport{alvisi99:analysisCIC,
+ author   = {Lorenzo Alvisi and Elmootazbellah Elnozahy and Sriram S. Rao and
+            Syed A. Husain and Asanka Del Mel},
+ title    = {An Analysis of Comunication-Induced Checkpointing},
+ institution= {Department of Computer Science, University of Texas at Austin},
+ year     = {1999},
+ number   = {TR-99-01},
+ address  = {Austin, {USA}}
+}
+```
+
+- @manual: 
+```latex
+@Manual{CORBA:spec,
+ title    = {{CORBA v3.0 Specification}},
+ author   = {{Object Management Group}},
+ month    = Jul,
+ year     = {2002},
+ note     = {{OMG Document 02-06-33}}
+}
+```
+
+- @Misc (O que não se encaixa em nenhum outro caso): 
+```latex
+@Misc{gridftp,
+ author   = {William Allcock},
+ title    = {{GridFTP} protocol specification. {Global Grid Forum}
+            Recommendation ({GFD}.20)},
+ year     = {2003}
+}
+```
+
+- @misc (Para referência a artigo online):
+```latex
+@Misc{fowler04:designDead,
+ author   = {Martin Fowler},
+ title    = {Is Design Dead?},
+ year     = {2004},
+ month    = May,
+ note     = {Último acesso em 30/1/2010},
+ howpublished= {\url{http://martinfowler.com/articles/designDead.html}},
+}
+```
+
+- @misc (Para referência a página web)
+```latex
+@Misc{FSF:GNU-GPL,
+ author   = {Free Software Foundation},
+ title    = {GNU general public license},
+ note     = {Último acesso em 30/1/2010},
+ howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
+}
+```
