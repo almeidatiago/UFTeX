@@ -1,8 +1,7 @@
-## Welcome to GitHub Pages
+## Manual para utilização e elaboração de trabalhos acadêmicos utilizando a classe uftex.cls
 
-You can use the [editor on GitHub](https://github.com/almeidatiago/uftex/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Escrever documentos acadêmicos pode ser uma tarefa trabalhosa quando os autores têm que preparar os seus manuscritos rigorosamente respeitando as regras de formatação imposta pela instituição de ensino ou mesmo por agentes externos, como por exemplo, a ABNT \abbrev{ABNT}{Associação Brasileira de Normas Técnicas}. Visando, automatizar esse processo, deixando que o estudante foque mais no desenvolvimento do trabalho, ao invés da despender muito tempo com a formatação do mesmo. Atualmente, os TCCs apresentados ao Curso de Ciência da Computação da Universidade Federal do Tocantins (CComp/UFT\abbrev{UFT}{Universidade Federal do Tocantins}) é editado em \LaTeX\, e essa demanda motivou o criação do projeto \uftex, que tenta facilitar e incentivar o uso do \LaTeX\ no âmbito CComp/UFT. \cite{JW82}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
