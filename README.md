@@ -295,6 +295,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 É muito recomendável a utilização de arquivos _bibtex_ para o gerenciamento de referências a trabalhos. Exemplos de referências com a tag:
 
 - @book: 
+
 ```latex
 @book{JW82,
  author   = {Richard A. Johnson and Dean W. Wichern},
@@ -305,6 +306,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @article (artigos em revistas e jornais): 
+
 ```latex
 @article{MenaChalco08,
  author   = {Jesús P. Mena-Chalco and Helaine Carrer and Yossi Zana and 
@@ -319,6 +321,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @inProceedings (artigos em congressos): 
+
 ```latex
 @inproceedings{alves03:simi,
  author   = {Carlos E. R. Alves and Edson N. Cáceres and Frank Dehne and 
@@ -335,6 +338,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @incollection (coleção de livros, exemplo, As Crônicas de Gelo e Fogo): 
+
 ```latex
 @InCollection{bobaoglu93:concepts,
  author   = {Ozalp Babaoglu and Keith Marzullo},
@@ -349,6 +353,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @conference (Congresso): 
+
 ```latex
 @Conference{bronevetsky02,
  author   = {Greg Bronevetsky and Daniel Marques and Keshav Pingali and 
@@ -362,6 +367,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @phdThesis: 
+
 ```latex
 @PhdThesis{garcia01:PhD,
  author   = {Islene C. Garcia},
@@ -373,6 +379,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @mastersThesis: 
+
 ```latex
 @MastersThesis{schmidt03:MSc,
  author   = {Rodrigo M. Schmidt},
@@ -384,6 +391,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @techreport: 
+
 ```latex
 @Techreport{alvisi99:analysisCIC,
  author   = {Lorenzo Alvisi and Elmootazbellah Elnozahy and Sriram S. Rao and
@@ -397,6 +405,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @manual: 
+
 ```latex
 @Manual{CORBA:spec,
  title    = {{CORBA v3.0 Specification}},
@@ -408,6 +417,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @Misc (O que não se encaixa em nenhum outro caso): 
+
 ```latex
 @Misc{gridftp,
  author   = {William Allcock},
@@ -418,6 +428,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @misc (Para referência a artigo online):
+
 ```latex
 @Misc{fowler04:designDead,
  author   = {Martin Fowler},
@@ -430,6 +441,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```
 
 - @misc (Para referência a página web)
+
 ```latex
 @Misc{FSF:GNU-GPL,
  author   = {Free Software Foundation},
