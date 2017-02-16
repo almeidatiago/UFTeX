@@ -27,10 +27,21 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Opções da Classe
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/almeidatiago/uftex/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+Esta classe contém uma série de configurações que visam facilitar o trabalho do aluno no momento da produção no \LaTeX. 
+A classe \uftex\ vem pré-configurada para cinco tipos de documentos distintos, são eles:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- report.  usada de forma genérica. Pode ser utilizada em relatórios de experimentos, aulas, trabalhos, etc. Esse comando cria somente permite que seja criada somente uma capa simples e a inclusão de vários autores ao mesmo documento.
+- tcc. devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso.
+- tcc1. devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso I.
+- tcc2. devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso II.
+- project. utilizada para estilização do documento para criação de um pré-projeto do trabalho. Essa opção deve ser utilizada em conjunto com a opção \verb+tcc+, \verb+tcc1+ ou \verb+tcc2+.
+
+Você pode especificar a opção de documento escolhida através do 
+```latex
+\documentclass[opções]{uftex}
+```
+
+É importante destacar que as opções: \verb+report+, \verb+tcc+, \verb+tcc1+ e \verb+tcc2+ são conflitantes e não devem ser utilizadas em conjunto.
