@@ -1,11 +1,11 @@
-## Manual para utilização e elaboração de trabalhos acadêmicos utilizando a classe uftex.cls
+## Manual de utilização e elaboração de trabalhos acadêmicos utilizando a classe uftex.cls
 
-Escrever documentos acadêmicos pode ser uma tarefa trabalhosa quando os autores têm que preparar os seus manuscritos rigorosamente respeitando as regras de formatação imposta pela instituição de ensino ou mesmo por agentes externos, como por exemplo, a ABNT (Associação Brasileira de Normas Técnicas). Visando, automatizar esse processo, deixando que o estudante foque mais no desenvolvimento do trabalho, ao invés da despender muito tempo com a formatação do mesmo. Atualmente, os TCCs apresentados ao Curso de Ciência da Computação da Universidade Federal do Tocantins (CComp/UFT (Universidade Federal do Tocantins) é editado em _LaTeX_, e essa demanda motivou o criação do projeto _uftex_, que tenta facilitar e incentivar o uso do _LaTeX_ no âmbito CComp/UFT.
+Escrever documentos acadêmicos pode ser uma tarefa trabalhosa quando os autores precisam preparar seus manuscritos respeitando as regras de formatação imposta pela instituição de ensino ou mesmo por agentes externos, como por exemplo, a ABNT (Associação Brasileira de Normas Técnicas). O objetivo da classe uftex.cls é automatizar a preparação de manuscritos, deixando que o estudante dedique mais ao desenvolvimento do trabalho, ao invés de despender muito tempo com a formatação do documento. Atualmente, os Trabalhos de Conclusão de Curso do curso de Ciência da Computação da Universidade Federal do Tocantins (CComp/UFT (Universidade Federal do Tocantins) é elaborado em _LaTeX_, e essa demanda motivou o criação do projeto _UFTeX_, que tenta facilitar e incentivar o uso do _LaTeX_ no âmbito da UFT.
 
 ### Opções da Classe
 
 
-Esta classe contém uma série de configurações que visam facilitar o trabalho do aluno no momento da produção no _LaTeX_. 
+Esta classe contém uma série de configurações que visam facilitar o trabalho do aluno no momento da produção do texto em _LaTeX_. 
 A classe _uftex_ vem pré-configurada para cinco tipos de documentos distintos, são eles:
 
 - ```report``` --  usada de forma genérica. Pode ser utilizada em relatórios de experimentos, aulas, trabalhos, etc. Esse comando cria somente permite que seja criada somente uma capa simples e a inclusão de vários autores ao mesmo documento.
