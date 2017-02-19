@@ -29,7 +29,7 @@ Os documentos produzidos a partir da classe _uftex_ devem conter três partes: p
 
 Você deve chamar o macro ```\frontmatter``` imediatamente após o ```\maketitle```. O comando ```\mainmatter``` vem logo antes do primeiro capítulo, e ```\backmatter``` deve ser digitado antes das referências bibliográficas.
 
-### Capa
+### Capa 
 
 Este elemento é automaticamente construído pelo comando ```\maketitle```. A opção de documento ```project``` inibe a construção do elemento capa.
 
