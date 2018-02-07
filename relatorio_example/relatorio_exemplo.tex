@@ -17,7 +17,7 @@
 
 \usepackage{lipsum}
 
-\usepackage[num]{abntex2cite}
+\usepackage[alf]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{}
@@ -37,7 +37,7 @@
   % ---- Departamento representa o curso ao qual o trabalho está sendo apresentado. Descrito por meio de duas iniciais do curso
   \department{CC}
   % ---- Data da apresentação do trabalho
-  \date{03}{2016}
+  \date{25}{03}{2016}
   % ---- Palavras-chaves em português do trabalho
   \keyword{\LaTeX}
   \keyword{\uftex}
@@ -52,21 +52,15 @@
   \foreignkeyword{University Extension}
   % ---- Comando responsável por criar a capa do trabalho e/ou folha de resto conforme a configuração exigida
   \maketitle
-  % ---- Esse comando marca o inicio dos elementos pré-textuais, e adiciona a numeração de páginas em algarismos romanos em caixa baixa
+
   \frontmatter
-  % ---- Cria uma dedicatória ao trabalho. OPCIONAL
-  %\dedication{A algu\'em cujo valor \'e digno desta dedicat\'oria.}
-  % ---- Cria os agradecimentos do trabalho. OPCIONAL
-  %\begin{acknowledgement}
-  %Gostaria de agradecer a todos.
-  %\end{acknowledgement}
-  % ---- Cria o resumo em idioma escolhido pelo usuário, no caso em português. OBRIGATÓRIO
+
   \begin{abstract}
-\lipsum[1]
+  \lipsum[1]
   \end{abstract}
-  % ---- Cria o resumo em idioma estrangeiro, no caso em inglês. OBRIGATÓRIO
+
   \begin{foreignabstract}
-  In this work, we present ...
+  \lipsum[9]
   \end{foreignabstract}
   \printlosymbols  
   \printloabbreviations
@@ -83,25 +77,40 @@
 % ----------------------------------------------------------------------------------------------------- %
 % Capítulos do trabalho
 % ----------------------------------------------------------------------------------------------------- %
+\ChapterStart{first}{First chapter}
 \chapter{Introdução}
 \label{sec:introducao}
 % ALTERAR texto desta seção
 \noindent 
 \lipsum[1]
 
+\lipsum[2]
+
+\lipsum[3]
+
 \section{Licença}
 \label{sec:Licenca}
 
 \noindent 
-\lipsum[1]
+\lipsum[4]
+
+\lipsum[5]
+
+\lipsum[6]
 
 \backmatter 
-\singlespacing   % espaçamento simples
+\singlespacing   
 % ----------------------------------------------------------------------------------------------------- %
-% Bibliografia
-%\bibliographystyle{plainnat} % citação bibliográfica alpha
 \bibliography{manual_uftex}
 
 \appendix
+\onehalfspacing
+
+\chapter{Sequências}
+\label{ape:sequencias}
+
+\noindent 
+\lipsum[7]
+
 
 \end{document}

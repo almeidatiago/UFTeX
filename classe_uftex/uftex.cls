@@ -31,7 +31,8 @@
 % --------------- Usamos arquivos pdf/png como figuras
 \RequirePackage{graphicx}
 % --------------- Somar total de folhas
-\RequirePackage{zref-totpages}
+%\RequirePackage{zref}
+\RequirePackage[savepos,totpages,titleref,dotfill,counter,user]{zref}
 % --------------- Espaçamento flexível
 \RequirePackage{setspace}
 % --------------- Indentação do primeiro parágrafo
@@ -74,19 +75,12 @@ extendedchars=true,
 xleftmargin=10pt,
 xrightmargin=10pt
 }  
-% --------------- Estilização dos rótulos de capítulos e seções
-\RequirePackage{titlesec} 
-\newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries}
-\titlespacing*{\chapter}{0pt}{-20pt}{30pt}
-% --------------- Formatação das captions de figuras e tabelas
-\RequirePackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 % --------------- Margens
 \RequirePackage[a4paper,top=3cm,bottom=2.0cm,left=3.0cm,right=2.cm]{geometry} 
 % --------------- Links em preto
 \RequirePackage[pdftex,unicode=true,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref}
 % --------------- soluciona o problema com o hyperref e capitulos
-\RequirePackage[all]{hypcap}
+%\RequirePackage[all]{hypcap}
 % --------------- Estilo de referências bibliográficas
 %\RequirePackage[numbers]{natbib}
 % --------------- Garantir que dois ou mais blocos de texto ocupam o mesmo espaço horizontal na página.
@@ -100,6 +94,114 @@ xrightmargin=10pt
 % --------------- Utilizado para construir a capa e folha de rosto
 \RequirePackage{tabularx}
 \RequirePackage{xstring}
+
+% --------------- Estilização dos rótulos de capítulos e seções
+
+\addto\captionsbrazil{% portugues-brasil
+  %% ajusta nomes padroes do babel
+  \renewcommand{\bibname}{Refer\^encias}
+}
+
+\RequirePackage[section]{placeins}
+\RequirePackage[subfigure,titles]{tocloft}
+
+\RequirePackage{titlesec} 
+\RequirePackage{chngcntr}
+\counterwithout{equation}{chapter}
+
+\renewcommand{\cftfigpresnum}{Figura }
+\renewcommand{\cftfignumwidth}{5em}
+\renewcommand{\cftfigaftersnum}{     -- }
+
+\renewcommand{\cfttabpresnum}{Tabela }
+\renewcommand{\cfttabnumwidth}{5em}
+\renewcommand{\cfttabaftersnum}{     -- }
+
+\titleformat{\section}
+{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalsize\bfseries\itshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+
+% Defining how is typeset the \chapter
+\def\@makechapterhead#1{%
+  {%
+%  \noindent\rule{\textwidth}{1.7pt}\\\par
+  \normalfont\bfseries
+  \vspace*{0pt}%
+  \noindent%
+  \parbox[b]{\textwidth}{%
+    \parbox[t]{4ex}{\thechapter}%
+    \parbox[t]{\textwidth-4ex-1ex}%
+      {\interlinepenalty\@M\raggedright%
+        \MakeUppercase{\bf #1}
+      }%
+    \vspace*{10pt}
+    }\\[2pt]%
+  \vspace{0pt}%
+  }%
+}
+
+% Defining how is typeset the \chapter*
+\def\@makeschapterhead#1{%
+  \vspace*{0pt}\par
+  {\centering\normalfont
+   \MakeUppercase{\bf #1}
+    \par}%
+  \vspace{45pt}%
+  \par%
+}
+
+   \def\l@chapter#1#2{\pagebreak[3]
+       \vskip 0.0em plus 0pt
+   \@tempdima 1.75cm    
+\begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \bfseries
+     \leavevmode     
+    \uppercase{#1}\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
+ \endgroup}
+			
+      \def\l@section#1#2{\pagebreak[3]
+       \vskip 0.0em plus 0pt 
+       \@tempdima 1.75cm     
+       \begingroup
+         \parindent \z@ \rightskip \@pnumwidth
+         \parfillskip -\@pnumwidth
+        \normalsize\bfseries   
+         \leavevmode         
+         #1\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
+       \endgroup}
+	
+	\def\l@subsection#1#2{\pagebreak[3]
+       \vskip -0.2em plus -1pt
+       \@tempdima 1.75cm      
+       \begingroup
+         \parindent \z@ \rightskip \@pnumwidth
+         \parfillskip -\@pnumwidth
+         \normalsize\bfseries\itshape     
+         \leavevmode        
+         #1\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
+       \endgroup}
+	
+      \def\l@subsubsection#1#2{\pagebreak[3]
+       \vskip -0.2em plus -1pt 
+       \@tempdima 1.75cm      
+       \begingroup
+        \parindent \z@ \rightskip \@pnumwidth
+         \parfillskip -\@pnumwidth
+          \normalsize\itshape                 
+         \leavevmode                
+         #1\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
+       \endgroup}
+
+
+
+% --------------- Formatação das captions de figuras e tabelas
+\RequirePackage[labelfont=bf,textfont=bf,labelsep=endash, singlelinecheck=false]{caption}
 % ------------------------------------------------------------------------------------------------------ %
 % --------------- Redefinição de comandos e criação de comandos básicos para documento
 % ------------------------------------------------------------------------------------------------------ %
@@ -195,9 +297,10 @@ xrightmargin=10pt
   \global\def\@authsurn{#2}
 }
 % ------------------------------------------------------------------------------------------------------ %
-\renewcommand\date[2]{%
-  \month=#1
-  \year=#2
+\renewcommand\date[3]{%
+  \day=#1
+  \month=#2
+  \year=#3
 }
 % ------------------------------------------------------------------------------------------------------ %
 \newcount\@class\@class0
@@ -218,29 +321,50 @@ xrightmargin=10pt
   \global\addtocounter{keywords}{1}
 }
 % ------------------------------------------------------------------------------------------------------ %
-%\newboolean{finalversion}
-%\setboolean{finalversion}{false}
 \renewcommand\frontmatter{%
   \cleardoublepage
   \@mainmatterfalse
-  \pagenumbering{roman}
-  %\ifthenelse{\boolean{finalversion}}{
-     \thispagestyle{empty}
-     \setcounter{page}{2}
-     \makefrontpage
-     %\clearpage
-     %\thispagestyle{empty}
-     %\makecatalog}{\setcounter{page}{2}}
-  \clearpage
-  \pagestyle{plain}
+  \let\oldplain\ps@plain
+  \let\ps@plain\ps@empty
+  \pagestyle{empty}
+  \makefrontpage
+  \pagebreak
+  \makepageapprove
 }
 % ------------------------------------------------------------------------------------------------------ %
+\renewcommand*{\ps@plain}{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddfoot\@empty
+  \def\@oddhead{%
+    \reset@font
+    \hfil
+    \thepage
+    % \hfil % removed for aligning to the right
+  }%
+  \let\@evenfoot\@empty
+  \let\@evenhead\@oddhead
+}
+
+\zref@newprop{chaptitle}{}
+\zref@addprop{main}{chaptitle}
+
+\newcommand*{\ChapterStart}[2]{%
+  \cleardoublepage
+  \def\current@chapid{#1}%
+  \zref@setcurrent{chaptitle}{#2}%
+  %\chapter{#2}%
+  \zlabel{chap:#1}%
+}
+
 \renewcommand\mainmatter{%
-  \uftex@mainBegin
   \cleardoublepage
   \@mainmattertrue
+  \clearpage\thispagestyle{empty}
+  \let\ps@plain\oldplain
   \pagestyle{plain}
-  \pagenumbering{arabic}}
+  \pagenumbering{arabic}
+\setcounter{page}{\number\numexpr\zref@extract{chap:first}{abspage}\relax}
+}
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\backmatter{%
   \if@openright
@@ -249,85 +373,37 @@ xrightmargin=10pt
     \clearpage
   \fi}
 % ------------------------------------------------------------------------------------------------------ %
-\AtBeginDocument{%
-  \ltx@ifpackageloaded{hyperref}{
-    \def\uftex@bibEnd{%
-      \immediate\write\@auxout{%
-        \string\newlabel{bib:end}{{}{\arabic{page}}{}{page.\arabic{page}}{}}}}%
-    \def\uftex@bibBegin{%
-      \immediate\write\@auxout{%
-        \string\newlabel{bib:begin}{{}{\arabic{page}}{}{page.\arabic{page}}{}}}}%
-    \def\uftex@mainBegin{%
-      \immediate\write\@auxout{%
-        \string\newlabel{front:pageno}{{}{\Roman{page}}{}{page.\roman{page}}{}}}}%
-    \def\uftex@hasLof{%
-      \immediate\write\@auxout{%
-        \string\newlabel{cat:lofflag}{{}{:~il.;}{}{page.\roman{page}}{}}}}%
-  }{%
-    \def\uftex@bibEnd{%
-      \immediate\write\@auxout{%
-      \string\newlabel{bib:end}{{}{\arabic{page}}{}}}}%
-    \def\uftex@bibBegin{%
-      \immediate\write\@auxout{%
-      \string\newlabel{bib:begin}{{}{\arabic{page}}{}}}}%
-    \def\uftex@mainBegin{%
-      \immediate\write\@auxout{%
-        \string\newlabel{front:pageno}{{}{\Roman{page}}{}}}}%
-    \def\uftex@hasLof{%
-      \immediate\write\@auxout{%
-        \string\newlabel{cat:lofflag}{{}{:~il.;}{}}}}%
-  }%
-}
+
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\maketitle{%
-  \pagenumbering{alph}
+  %\pagenumbering{alph}
   \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
   \begin{titlepage}
-\begin{minipage}{0.2\textwidth}% adapt widths of minipages to your needs
-\includegraphics[width=.8\linewidth]{logouft}
-\end{minipage}%
-\hfill%
-\begin{minipage}{0.8\textwidth}\raggedright
-\MakeUppercase\frontcover@maintext
-\end{minipage}
+
+\begin{center}
+\includegraphics[scale=.3]{logouft}\\
+\MakeUppercase{\bf\frontcover@maintext}
+\end{center}
+
   \vfill
   \begin{center}
-  \nohyphens{\MakeUppercase\local@title}\par
+  \nohyphens{\bf\MakeUppercase\local@title}\par
   \vfill
-  \nohyphens{\@authname\ \@authsurn}\par
+  \nohyphens{\MakeUppercase{\bf\@authname\ \@authsurn}}\par
   \vfill
-  \nohyphens{%
-  \begin{tabularx}{8.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
-    \count1=0
-    %\toks@={}
-    \@whilenum \count1<\@advisor \do{%
-    \ifcase\count1 % same as \ifnum0=\count1
-        \local@advisorstring: \csname uftAdvisorDegree:\the\count1 \endcsname \ 
-        \csname uftAdvisorName:\the\count1 \endcsname \ 
-        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
-    \else
-        \local@coadvisorstring: \csname uftAdvisorDegree:\the\count1 \endcsname \ 
-        \csname uftAdvisorName:\the\count1 \endcsname \ 
-        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
-    \fi
-    \advance\count1 by 1}
-    %\the\toks@
-  \end{tabularx}}\par
   \vspace*{\fill}
-  \local@cityname\par
-  \local@monthname\ de \number\year
+  {\bf\frontpage@bottomtext}
   \end{center}
+
   \end{titlepage}
   \global\let\maketitle\relax%
   \global\let\and\relax}
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\makefrontpage{%
   \begin{center}
-    \sloppy\nohyphens{\MakeUppercase\local@title}\par
+    \MakeUppercase{\@authname\ \@authsurn}\par
     \vfill
-    {\@authname\ \@authsurn}\par
+    \nohyphens{\MakeUppercase\local@title}\par
   \end{center}
   \vfill
   \begin{flushright}
@@ -336,20 +412,38 @@ xrightmargin=10pt
   \end{minipage}\par
  \end{flushright}
   \vfill
-%  \noindent \par Comissão Julgadora:\par
-%     \begin{center}
-%  \begin{flushright}
-%        \count1=0
-%        \@whilenum \count1<\@examiner \do {
-%            %\vskip26\p@ \baselineskip12pt
-%        %\eqmakebox[signture@list][c]{\hrulefill}\\
-%        \eqmakebox[signture@list][c]{%
-%            \ \ \ \protect\csname uftExaminer:\the\count1 \endcsname\ \ \ }\\
-%            \advance\count1 by 1}
-%  \end{flushright}
-%     \end{center}
-%  \vspace*{\fill}
   \frontpage@bottomtext}
+% ------------------------------------------------------------------------------------------------------ %
+\newcommand\makepageapprove{%
+  \begin{center}
+    \MakeUppercase{\@authname\ \@authsurn}\par
+    \vfill
+    \nohyphens{\MakeUppercase\local@title}\par
+  \end{center}
+  \vfill
+  \begin{flushright}
+  \begin{minipage}{8.45cm}
+  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Campus Universitário de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenção do título de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+  \end{minipage}
+ \end{flushright}
+\vfill
+\noindent Data de aprovação: \number\day\ / \number\month\ / \number\year\
+
+\vspace{1cm}
+
+\noindent Banca Examinadora:
+     \begin{center}
+  %\begin{flushright}
+        \count1=0
+        \@whilenum \count1<\@examiner \do {
+            \vskip26\p@ \baselineskip12pt
+        \eqmakebox[signture@list][c]{\hrulefill}\\
+        \eqmakebox[signture@list][c]{%
+            \ \ \ \protect\csname uftExaminer:\the\count1 \endcsname\ \ \ }\\
+            \advance\count1 by 1}
+  %\end{flushright}
+     \end{center}
+}
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\makecatalog{%
 
@@ -455,6 +549,7 @@ xrightmargin=10pt
 \newcommand\dedication[1]{
   \gdef\@dedic{#1}
     \cleardoublepage
+    \thispagestyle{empty}
     \vspace*{\fill}
     \begin{flushright}
       \begin{minipage}{60mm}
@@ -463,6 +558,8 @@ xrightmargin=10pt
     \end{flushright}}
 % ------------------------------------------------------------------------------------------------------ %
 \newenvironment{abstract}{%
+\cleardoublepage
+\thispagestyle{empty}
 \chapter*{Resumo}
 \setlength{\parindent}{0pt}
 }{\vspace{.5cm}
@@ -474,6 +571,8 @@ xrightmargin=10pt
         \advance\count2 by 1}}\par}
 % ------------------------------------------------------------------------------------------------------ %
 \newenvironment{foreignabstract}{%
+\cleardoublepage
+\thispagestyle{empty}
 \chapter*{Abstract}
 \setlength{\parindent}{0pt}
 }{\vspace{.5cm}
@@ -486,6 +585,8 @@ xrightmargin=10pt
     \advance\count1 by 1}}\par}
 % ------------------------------------------------------------------------------------------------------ %
 \newenvironment{acknowledgement}{%
+\cleardoublepage
+\thispagestyle{empty}
 \chapter*{Agradecimentos}
 \noindent
 }{\vspace*{\fill}}
@@ -595,18 +696,57 @@ xrightmargin=10pt
 \newcommand\frontcover@maintext{
      \sloppy\nohyphens{\local@universityname \par
         Campus Universitário de Palmas\par
-     \local@deptstring\ de \local@deptname \par
-     \local@doctype}
+     \local@deptstring\ de \local@deptname}
 }
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado ao \local@deptstring\ de \local@deptname , CUP, da \local@universityname , como parte dos requisitos necess{\' a}rios {\` a} obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname .}
+  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orineta\c{c}\~a  do (a) Prof. (a) 
+   \nohyphens{%
+ %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
+    %\local@advisorstring: %&
+    %\local@advisorstring:
+    \count1=0
+    %\toks@={}
+    \@whilenum \count1<\@advisor \do{%
+    \ifcase\count1 % same as \ifnum0=\count1
+        \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname . \par
+    \fi
+    \advance\count1 by 1}
+    %\the\toks@
+  %\end{tabularx}
+  }
+
+ \vspace{1.5cm}
+  \nohyphens{%
+ %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
+    %\local@advisorstring: %&
+    %\local@advisorstring:
+    \count1=0
+    %\toks@={}
+    \@whilenum \count1<\@advisor \do{%
+    \ifcase\count1 % same as \ifnum0=\count1
+        \local@advisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
+    \else
+        \local@coadvisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
+    \fi
+    \advance\count1 by 1}
+    %\the\toks@
+  %\end{tabularx}
+  } \par
 }
+}
+
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@bottomtext{%
   \begin{center}
-  {\MakeUppercase{\local@cityname, \local@statename\ -- \local@countryname}}\par
-  {\MakeUppercase\local@monthname\ DE \number\year}
+  {\MakeUppercase{\local@cityname\ (\local@statename )}}\par
+  {\number\year}
   \end{center}%
 }
 % ------------------------------------------------------------------------------------------------------ %
@@ -733,12 +873,9 @@ xrightmargin=10pt
 \renewcommand\frontmatter{%
   \cleardoublepage
   \@mainmatterfalse
-  \pagenumbering{roman}
-  \thispagestyle{empty}
-  \setcounter{page}{2}
-  %\makefrontpage
-  \clearpage
-  \pagestyle{plain}
+\let\oldplain\ps@plain
+\let\ps@plain\ps@empty
+\pagestyle{empty}
 }
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\frontcover@maintext{
@@ -751,66 +888,6 @@ xrightmargin=10pt
      \local@doctype\ de \local@class
   \fi}
 }
-\renewcommand\maketitle{%
-  \pagenumbering{alph}
-  \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
-  \begin{titlepage}
-
-\begin{center}
-%\begin{minipage}{0.2\textwidth}% adapt widths of minipages to your needs
-\includegraphics[scale=.3]{logouft}\\
-%\end{minipage}%
-%\hfill%
-%\begin{minipage}{0.8\textwidth}\raggedright
-\MakeUppercase{\small{\frontcover@maintext}}
-%\end{minipage}
-\end{center}
-  \vfill
-  \begin{center}
-  \nohyphens{\MakeUppercase\local@title}\par
-  \vfill
-  %\nohyphens{\@authname\ \@authsurn}\par
-  \nohyphens{
-    \count1=0
-    \@whilenum \count1<\@uftauthor \do{%
-      \protect\csname uftAuthor:\the\count1 \endcsname \par
-      \advance\count1 by 1
-  }}
-  \vfill
- \ifnum0=\@advisor
-    \vfil
-\else
-  \begin{tabularx}{8.45cm}[b]{@{}l@{ }>{\raggedright\arraybackslash}X@{}}
-    \local@advisorstring: &
-    \count1=0
-    \toks@={}
-    \@whilenum \count1<\@advisor \do{%
-    \ifcase\count1 % same as \ifnum0=\count1
-      \toks@=\expandafter{\csname uftAdvisorDegree:\the\count1%
-        \expandafter\endcsname\expandafter\space%
-        \csname uftAdvisorName:\the\count1%
-        \expandafter\endcsname\expandafter\space%
-        \csname uftAdvisorSurname:\the\count1\endcsname\\}
-    \else
-      \toks@=\expandafter\expandafter\expandafter{%
-        \expandafter\the\expandafter\toks@%
-        \expandafter&\expandafter\space%
-        \csname uftAdvisorDegree:\the\count1%
-        \expandafter\endcsname\expandafter\space%
-        \csname uftAdvisorName:\the\count1\expandafter\endcsname%
-        \expandafter\space\csname uftAdvisorSurname:\the\count1\endcsname\\
-      }%
-    \fi
-    \advance\count1 by 1}
-    \the\toks@
-  \end{tabularx}\par
-  \vfill\fi
-  \local@cityname\par
-  \local@monthname\ de \number\year
-  \end{center}
-  \end{titlepage}
-  \global\let\maketitle\relax%
-  \global\let\and\relax}
 }
 % ------------------------------------------------------------------------------------------------------ %
 % Fim Relatório
