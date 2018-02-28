@@ -412,7 +412,7 @@ address={Rio de Janeiro},
 organization={Associa{\c c}\~ao Brasileira de Normas T\’ecnicas},
 subtitle={apresenta{\c c}\~ao de cita{\c c}\~oes em documentos:
 procedimento},
-title={{NBR} 10520},
+title={NBR 10520},
 year={1988}}
 ```
 
