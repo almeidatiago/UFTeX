@@ -99,7 +99,7 @@ xrightmargin=10pt
 
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
-  \renewcommand{\bibname}{Refer\^encias}
+  \renewcommand{\bibname}{REFER\^ENCIAS}
 }
 
 \RequirePackage[section]{placeins}
@@ -700,7 +700,7 @@ xrightmargin=10pt
 }
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orineta\c{c}\~a  do (a) Prof. (a) 
+  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orineta\c{c}\~ao  do(a) Prof.(a) 
    \nohyphens{%
  %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
     %\local@advisorstring: %&
