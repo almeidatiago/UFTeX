@@ -407,13 +407,13 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 - @manual: 
 
 ```latex
-@Manual{CORBA:spec,
- title    = {{CORBA v3.0 Specification}},
- author   = {{Object Management Group}},
- month    = Jul,
- year     = {2002},
- note     = {{OMG Document 02-06-33}}
-}
+@manual{brasileira1988,
+address={Rio de Janeiro},
+organization={Associa{\c c}\~ao Brasileira de Normas T\’ecnicas},
+subtitle={apresenta{\c c}\~ao de cita{\c c}\~oes em documentos:
+procedimento},
+title={{NBR} 10520},
+year={1988}}
 ```
 
 - @Misc (O que não se encaixa em nenhum outro caso): 
@@ -429,14 +429,17 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 - @misc (Para referência a artigo online):
 
 ```latex
-@Misc{fowler04:designDead,
- author   = {Martin Fowler},
- title    = {Is Design Dead?},
- year     = {2004},
- month    = May,
- note     = {Último acesso em 30/1/2010},
- howpublished= {\url{http://martinfowler.com/articles/designDead.html}},
-}
+@article{brasil1999,
+address={Bras{\’\i}lia, DF},
+journal={Di\’ario Oficial [da] Rep\’ublica Federativa do Brasil},
+month={8 dez.},
+organization={Brasil},
+title={Lei n{$^o$} 9.887, de 7 de dezembro de 1999. Altera a legisla{\c
+c}\~ao
+tribut\’aria federal},
+url={http://www.in.gov.br/mp_leis/leis_texto.aps?Id=Lei%209887},
+urlaccessdate={22 dez. 1999},
+year={1999}}
 ```
 
 - @misc (Para referência a página web)
