@@ -442,10 +442,11 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 - @misc (Para referência a página web)
 
 ```latex
-@Misc{FSF:GNU-GPL,
- author   = {Free Software Foundation},
- title    = {GNU general public license},
- note     = {Último acesso em 30/1/2010},
- howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
+@Misc{azure,
+ organization =  {Microsoft Corporation},
+ title    = {Communicate with your IoT hub using the MQTT protocol},
+ urlaccessdate = {28 fev. 2018},
+ url={https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support},
+ year = {2018}
 }
 ```
