@@ -2,7 +2,7 @@
 %  X.0.0 - novas funções
 %  0.X.0 - melhorias e / ou evoluções
 %  0.0.X - correção de bugs
-\def\fileversion{v1.3.0}
+\def\fileversion{v2.1.0}
 \def\filedate{2016/08/25}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass {uftex} [\filedate\ \fileversion\ Classe personalizada para o curso de Ciência da Computação da UFT - CUP]
@@ -58,7 +58,7 @@
 % --------------- Para utilização e formatação de código fonte em diversas linguagens
 \RequirePackage{listings}
 \lstset{ %
-basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+basicstyle=\sffamily\footnotesize,       % the size of the fonts that are used for the code
 numbers=left,                   % where to put the line-numbers
 numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
 stepnumber=1,                   % the step between two line-numbers. If it's 1 each line will be numbered
@@ -110,20 +110,21 @@ xrightmargin=10pt
 \counterwithout{equation}{chapter}
 
 \renewcommand{\cftfigpresnum}{Figura }
-\renewcommand{\cftfignumwidth}{5em}
+\renewcommand{\cftfignumwidth}{6em}
 \renewcommand{\cftfigaftersnum}{     -- }
 
 \renewcommand{\cfttabpresnum}{Tabela }
-\renewcommand{\cfttabnumwidth}{5em}
+\renewcommand{\cfttabnumwidth}{6em}
 \renewcommand{\cfttabaftersnum}{     -- }
 
 \titleformat{\section}
 {\normalsize\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
-{\normalsize\bfseries\itshape}{\thesubsection}{1em}{}
+{\normalsize}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-{\normalsize\itshape}{\thesubsubsection}{1em}{}
+{\normalsize}{\thesubsubsection}{1em}{}
 
+\setcounter{secnumdepth}{3}
 
 % Defining how is typeset the \chapter
 \def\@makechapterhead#1{%
@@ -182,7 +183,7 @@ xrightmargin=10pt
        \begingroup
          \parindent \z@ \rightskip \@pnumwidth
          \parfillskip -\@pnumwidth
-         \normalsize\bfseries\itshape     
+         \normalsize%\bfseries\itshape     
          \leavevmode        
          #1\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
        \endgroup}
@@ -193,7 +194,7 @@ xrightmargin=10pt
        \begingroup
         \parindent \z@ \rightskip \@pnumwidth
          \parfillskip -\@pnumwidth
-          \normalsize\itshape                 
+          \normalsize%\itshape                 
          \leavevmode                
          #1\hfil \cftdotfill{\cftdotsep} \hbox to\@pnumwidth{\hss #2}\medskip\par
        \endgroup}
@@ -201,7 +202,7 @@ xrightmargin=10pt
 
 
 % --------------- Formatação das captions de figuras e tabelas
-\RequirePackage[labelfont=bf,textfont=bf,labelsep=endash, singlelinecheck=false]{caption}
+\RequirePackage[labelfont=bf,textfont=bf,labelsep=endash, singlelinecheck=false,justification=centering]{caption}
 % ------------------------------------------------------------------------------------------------------ %
 % --------------- Redefinição de comandos e criação de comandos básicos para documento
 % ------------------------------------------------------------------------------------------------------ %
@@ -282,7 +283,7 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \newcount\@examiner\@examiner0
 \newcommand\examiner[3]{%
-  \global\@namedef{uftExaminer:\expandafter\the\@examiner}{#1\ #2, #3}
+  \global\@namedef{uftExaminer:\expandafter\the\@examiner}{#1\ #2\ #3}
   \global\advance\@examiner by 1
 }
 % ------------------------------------------------------------------------------------------------------ %
@@ -681,7 +682,7 @@ xrightmargin=10pt
   {\if@restonecol\onecolumn\else\clearpage\fi}
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\glossaryname{Glossary}
-\newcommand\listabbreviationname{Lista de Abreviaturas}
+\newcommand\listabbreviationname{Lista de Siglas}
 \newcommand\listsymbolname{Lista de S{\' i}mbolos}
 \newcommand\local@advisorstring{Orientador}
 \newcommand\local@coadvisorstring{Coorientador}
@@ -756,16 +757,19 @@ xrightmargin=10pt
   \global\advance\@fields by 1
 }
 % ------------------------------------------------------------------------------------------------------ %
-
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parindent}{1.25cm}
 
 % ------------------------------------------------------------------------------------------------------ %
 % Inicio Pré-Projeto
 % ------------------------------------------------------------------------------------------------------ %
 \DeclareOption{project}{
+\setlength{\parindent}{0cm}
+\renewcommand{\baselinestretch}{1.0}
 
 \renewenvironment{abstract}{%
 \section*{Resumo}
-}{\vspace*{\fill}}
+}{\vspace{0.cm}}
 
 \renewenvironment{thebibliography}[1]
      {\section*{\bibname}% <-- this line was changed from \chapter* to \section*
