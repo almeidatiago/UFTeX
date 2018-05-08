@@ -116,7 +116,7 @@ Algum texto...
 ### Lista de Símbolos e Abreviaturas (Opcional)
 
 As listas de símbolos e abreviaturas são opcionais, embora altamente recomendadas.
-É uma boa prática definir um símbolo/abreviatura em sua primeira ocorrência no texto. Para definir um símbolo de uso ```\symbl{Símbolo}{Definição do Símbolo}```, e para abreviaturas ```abbrev{Abreviatura}{Abreviatura Definição}```.
+É uma boa prática definir um símbolo/abreviatura em sua primeira ocorrência no texto. Para definir um símbolo de uso ```\symbl{Símbolo}{Definição do Símbolo}```, e para abreviaturas ```\abbrev{Abreviatura}{Abreviatura Definição}```.
 É interessante destacar que estes comandos não provocam alteração no lugar onde são escritos, ou seja, só aparecem na lista de símbolos e abreviaturas.
 
 Estas listas são lexicograficamente classificadas usando o programa \emph{MakeIndex}, que é parte de qualquer implementação _LaTeX_. _MakeIndex_ precisa de dois comandos para criar uma lista final ordenada: um que gera uma lista de entradas e outro que indica a posição onde a lista será impressa. Para gerar as listas de símbolos e abreviaturas, a classe _uftex_ fornece os comandos ```\makeloabreviations``` e ```\makelosymbols```, respectivamente. Eles devem ser chamados no preâmbulo do documento. Os comandos ```\printlosymbols``` e ```printloabbreviations``` tem que ser invocados no ponto onde você quer que estas listas apareçam, por exemplo, seguindo a lista de tabelas como por exemplo:
@@ -124,7 +124,7 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
 ```latex
 \documentclass[tcc]{uftex}
 % --------------------------------------------------------------------- %
-\usepackage[num]{abntex2cite}
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{}
@@ -198,6 +198,7 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
 % --------------------------------------------------------------------- %
 % Capítulos do trabalho
 % --------------------------------------------------------------------- %
+\ChapterStart{first}{First chapter}
 \chapter{Introdução}
 .
 .
@@ -207,7 +208,7 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
 % --------------------------------------------------------------------- %
 % Bibliografia
 % --------------------------------------------------------------------- %
-\bibliography{exemplo}
+\bibliography{tcc_exemplo}
 
 % --------------------------------------------------------------------- %
 % Anexos
@@ -220,15 +221,14 @@ Estas listas são lexicograficamente classificadas usando o programa \emph{MakeI
 Uma vez que você compila o _latex_, ele criará dois arquivos com extensões **abx** e **syx**, que contêm dados de entrada \emph{MakeIndex}. Eles devem ser processados com _makeindex_ a fim de obter as listas produzidas corretamente, redirecionando a saída para arquivos com extensão **lab** e **los** respectivamente:
 
 ```
-makeindex -s uftex.ist -o exemplo.lab exemplo.abx
-makeindex -s uftex.ist -o exemplo.los exemplo.syx
+makeindex -s uftex.ist -o tcc_exemplo.lab tcc_exemplo.abx
+makeindex -s uftex.ist -o tcc_exemplo.los tcc_exemplo.syx
 ```
 
 Observe a opção **-s** para especificar o estilo **uftex.ist**. Agora, compile o _latex_ duas vezes para obter as referências e está feito. % explicar melhor isso aqui. Especificar com mais clareza a ordem em que os comandos devem ser feitos, ou seja, explicar melhor o processo.
 
 ## Elaboração do documento
 
-- **Parágrafos**. Todos os parágrafos no inicio de cada Capítulo ou Seção devem ser iniciados sem indentação utilizando o comando ```\noindent```.
 - **Citações**. Para citações longas com mais de três linhas é possível utilizar o aperfeiçoamento do ambiente \verb+\quote+, como por exemplo:
 
 ```latex
@@ -239,12 +239,14 @@ Observe a opção **-s** para especificar o estilo **uftex.ist**. Agora, compile
 
 Porém, esse recurso deve ser utilizado com muito cuidado para evitar situação de plágio. 
 
+Caso contrário utilizar \verb+\cite{}+ para citação indireta e \verb+\citeonline{}+ para citação direta.
+
 - **Imagens**. O formato de imagem padrão do _LaTeX_ é a _Encapsulated PostScript_ (EPS). Se você usar PDF _LaTeX_, o formato padrão se torna o PDF, mas você pode igualmente carregar arquivos PNG. Para tal, você deve digitar o nome do arquivo de imagem sem extensão, por exemplo, 
 
 ```latex
 \begin{figure}
-  \includegraphics[dimensões]{nome-do-arquivo}
   \caption{Legenda.}\label{chave_para_refencia_cruzada}
+  \includegraphics[dimensões]{nome-do-arquivo}
 \end{figure}
 ```
 
@@ -264,7 +266,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 ```latex
 \documentclass[tcc2]{uftex}
 % --------------------------------------------------------------------- %
-\usepackage[num]{abntex2cite}
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 \renewcommand{\backrefpagesname}{}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{}
@@ -282,7 +284,7 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 % --------------------------------------------------------------------- %
 % Bibliografia
 % --------------------------------------------------------------------- %
-\bibliography{exemplo}
+\bibliography{tcc_exemplo}
 .
 .
 .
@@ -407,13 +409,13 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
 - @manual: 
 
 ```latex
-@manual{brasileira1988,
-address={Rio de Janeiro},
-organization={Associa{\c c}\~ao Brasileira de Normas T\’ecnicas},
-subtitle={apresenta{\c c}\~ao de cita{\c c}\~oes em documentos:
-procedimento},
-title={NBR 10520},
-year={1988}}
+@Manual{CORBA:spec,
+ title    = {{CORBA v3.0 Specification}},
+ author   = {{Object Management Group}},
+ month    = Jul,
+ year     = {2002},
+ note     = {{OMG Document 02-06-33}}
+}
 ```
 
 - @Misc (O que não se encaixa em nenhum outro caso): 
@@ -429,27 +431,23 @@ year={1988}}
 - @misc (Para referência a artigo online):
 
 ```latex
-@article{brasil1999,
-address={Bras{\’\i}lia, DF},
-journal={Di\’ario Oficial [da] Rep\’ublica Federativa do Brasil},
-month={8 dez.},
-organization={Brasil},
-title={Lei n{$^o$} 9.887, de 7 de dezembro de 1999. Altera a legisla{\c
-c}\~ao
-tribut\’aria federal},
-url={http://www.in.gov.br/mp_leis/leis_texto.aps?Id=Lei%209887},
-urlaccessdate={22 dez. 1999},
-year={1999}}
+@Misc{fowler04:designDead,
+ author   = {Martin Fowler},
+ title    = {Is Design Dead?},
+ year     = {2004},
+ month    = May,
+ note     = {Último acesso em 30/1/2010},
+ howpublished= {\url{http://martinfowler.com/articles/designDead.html}},
+}
 ```
 
 - @misc (Para referência a página web)
 
 ```latex
-@Misc{azure,
- organization =  {Microsoft Corporation},
- title    = {Communicate with your IoT hub using the MQTT protocol},
- urlaccessdate = {28 fev. 2018},
- url={https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support},
- year = {2018}
+@Misc{FSF:GNU-GPL,
+ author   = {Free Software Foundation},
+ title    = {GNU general public license},
+ note     = {Último acesso em 30/1/2010},
+ howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
 }
 ```
