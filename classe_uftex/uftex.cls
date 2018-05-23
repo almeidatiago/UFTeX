@@ -108,13 +108,15 @@ xrightmargin=10pt
 \RequirePackage{titlesec} 
 \RequirePackage{chngcntr}
 \counterwithout{equation}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
 
 \renewcommand{\cftfigpresnum}{Figura }
-\renewcommand{\cftfignumwidth}{6em}
+\renewcommand{\cftfignumwidth}{5em}
 \renewcommand{\cftfigaftersnum}{     -- }
 
 \renewcommand{\cfttabpresnum}{Tabela }
-\renewcommand{\cfttabnumwidth}{6em}
+\renewcommand{\cfttabnumwidth}{5em}
 \renewcommand{\cfttabaftersnum}{     -- }
 
 \titleformat{\section}
@@ -424,7 +426,7 @@ xrightmargin=10pt
   \vfill
   \begin{flushright}
   \begin{minipage}{8.45cm}
-  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Campus Universitário de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenção do título de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Câmpus Universitário de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenção do título de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
   \end{minipage}
  \end{flushright}
 \vfill
@@ -696,12 +698,12 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontcover@maintext{
      \sloppy\nohyphens{\local@universityname \par
-        Campus Universitário de Palmas\par
+        Câmpus Universitário de Palmas\par
      \local@deptstring\ de \local@deptname}
 }
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orieta\c{c}\~ao  do(a) Prof.(a) 
+  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
    \nohyphens{%
  %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
     %\local@advisorstring: %&
