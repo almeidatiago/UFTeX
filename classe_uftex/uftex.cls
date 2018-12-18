@@ -770,12 +770,15 @@ xrightmargin=10pt
 \renewcommand{\baselinestretch}{1.0}
 
 \renewenvironment{abstract}{%
-\section*{Resumo}
+\section*{RESUMO}
 }{\vspace{0.cm}}
+
+\titleformat{\section}
+{\normalsize\bfseries}{\thesection}{1em}{\uppercase}
 
 \renewenvironment{thebibliography}[1]
      {\section*{\bibname}% <-- this line was changed from \chapter* to \section*
-      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      %\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
@@ -886,7 +889,7 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\frontcover@maintext{
      \sloppy\nohyphens{\local@universityname \par
-        Campus Universitário de Palmas\par
+        Câmpus Universitário de Palmas\par
    \ifnum\@class=0 %\endcsname\relax
      \local@deptstring\ de \local@deptname
    \else
