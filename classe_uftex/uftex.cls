@@ -2,8 +2,8 @@
 %  X.0.0 - novas funções
 %  0.X.0 - melhorias e / ou evoluções
 %  0.0.X - correção de bugs
-\def\fileversion{v2.1.0}
-\def\filedate{2016/08/25}
+\def\fileversion{v2.2.0}
+\def\filedate{2019/05/09}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass {uftex} [\filedate\ \fileversion\ Classe personalizada para o curso de Ciência da Computação da UFT - CUP]
 
@@ -260,6 +260,9 @@ xrightmargin=10pt
    \ifthenelse{\equal{#1}{AL}}
     {\global\def\local@deptname{Engenharia de Alimentos}
      \global\def\foreign@deptname{Food Engineering}}{}
+  \ifthenelse{\equal{#1}{SAD}}
+    {\global\def\local@deptname{Sistemas de Apoio à Decisão}
+     \global\def\foreign@deptname{Decision Support Systems}}{}
 }
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\title[1]{%
@@ -426,7 +429,7 @@ xrightmargin=10pt
   \vfill
   \begin{flushright}
   \begin{minipage}{8.45cm}
-  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Câmpus Universitário de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenção do título de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+  \approvepage@maintext
   \end{minipage}
  \end{flushright}
 \vfill
@@ -701,6 +704,11 @@ xrightmargin=10pt
         Câmpus Universitário de Palmas\par
      \local@deptstring\ de \local@deptname}
 }
+
+\newcommand\approvepage@maintext{
+  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Câmpus Universitário de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenção do título de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+}
+
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
   \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
@@ -900,6 +908,76 @@ xrightmargin=10pt
 }
 % ------------------------------------------------------------------------------------------------------ %
 % Fim Relatório
+% ------------------------------------------------------------------------------------------------------ %
+
+
+% ------------------------------------------------------------------------------------------------------ %
+% Inicio Lato Sensu
+% ------------------------------------------------------------------------------------------------------ %
+\DeclareOption{latosensu}{
+
+  \renewcommand{\@degreename}{Especialização}
+  \renewcommand{\local@degname}{Especialista}
+  \renewcommand{\foreign@degname}{Specialist}
+  \newcommand{\local@program}{Pós-Graduação \textit{Latu Senso}}
+
+\renewcommand\approvepage@maintext{
+  \local@doctype\ apresentado à UFT -- \local@universityname\ -- Câmpus Universitário de \local@cityname , Curso de \local@program\ em \local@deptname\ foi avaliado como requisito parcial para a obtenção do certificado de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+}
+
+\renewcommand\frontcover@maintext{
+     \sloppy\nohyphens{\local@universityname \par
+        Câmpus Universitário de Palmas\par
+     \local@deptstring\ de \local@program\ em \local@deptname}
+}
+
+% ------------------------------------------------------------------------------------------------------ %
+\renewcommand\frontpage@maintext{
+  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ como requisito parcial para obten{\c c}{\~ a}o do certificado de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
+   \nohyphens{%
+ %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
+    %\local@advisorstring: %&
+    %\local@advisorstring:
+    \count1=0
+    %\toks@={}
+    \@whilenum \count1<\@advisor \do{%
+    \ifcase\count1 % same as \ifnum0=\count1
+        \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname . \par
+    \fi
+    \advance\count1 by 1}
+    %\the\toks@
+  %\end{tabularx}
+  }
+
+ \vspace{1.5cm}
+  \nohyphens{%
+ %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
+    %\local@advisorstring: %&
+    %\local@advisorstring:
+    \count1=0
+    %\toks@={}
+    \@whilenum \count1<\@advisor \do{%
+    \ifcase\count1 % same as \ifnum0=\count1
+        \local@advisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
+    \else
+        \local@coadvisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
+        \csname uftAdvisorName:\the\count1 \endcsname \ 
+        \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
+    \fi
+    \advance\count1 by 1}
+    %\the\toks@
+  %\end{tabularx}
+  } \par
+}
+}
+
+}
+% ------------------------------------------------------------------------------------------------------ %
+% Fim Lato Sensu
 % ------------------------------------------------------------------------------------------------------ %
 
 
