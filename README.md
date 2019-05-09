@@ -8,11 +8,12 @@ Escrever documentos acadêmicos pode ser uma tarefa trabalhosa quando os autores
 Esta classe contém uma série de configurações que visam facilitar o trabalho do aluno no momento da produção do texto em _LaTeX_. 
 A classe _uftex_ vem pré-configurada para cinco tipos de documentos distintos, são eles:
 
-- ```report``` --  usada de forma genérica. Pode ser utilizada em relatórios de experimentos, aulas, trabalhos, etc. Esse comando cria somente permite que seja criada somente uma capa simples e a inclusão de vários autores ao mesmo documento.
+- ```report``` --  usada de forma genérica. Pode ser utilizada em relatórios de experimentos, aulas, trabalhos, etc.. Esse comando cria somente permite que seja criada somente uma capa simples e a inclusão de vários autores ao mesmo documento.
 - ```tcc``` -- devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso.
 - ```tcc1``` -- devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso I.
 - ```tcc2``` -- devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso II.
-- project. utilizada para estilização do documento para criação de um pré-projeto do trabalho. Essa opção deve ser utilizada em conjunto com a opção ```tcc```, ```tcc1``` ou ```tcc2```.
+- ```project``` -- utilizada para estilização do documento para criação de um pré-projeto do trabalho. Essa opção deve ser utilizada em conjunto com a opção ```tcc```, ```tcc1``` ou ```tcc2```.
+- ```latusenso``` -- utilizada para estilização do documento com o rótulo de Pós-Graduação _Latu Senso_.
 
 Você pode especificar a opção de documento escolhida através do 
 
@@ -46,7 +47,7 @@ Obrigatoriamente, para a construção do elemento capa, devem ser inseridos os s
 ```
 
 Mais de um orientador pode ser adicionado, para o caso de trabalhos co-orientados. Se for escolhida a opção ```report``` não é necessário a utilização desse comando.
-- ```\department{}``` -- Quanto ao departamento, a princípio estão cadastradas as seguintes abreviaturas: EC (Engenharia Civil), EE (Engenharia Elétrica), EA (Engenharia Ambiental), CC (Ciência da Computação) e AL (Engenharia de Alimentos). Você deve especificar o seu departamento usando uma das abreviaturas acima, por exemplo, ```\department{CC}```.
+- ```\department{}``` -- Quanto ao departamento, a princípio estão cadastradas as seguintes abreviaturas: EC (Engenharia Civil), EE (Engenharia Elétrica), EA (Engenharia Ambiental), CC (Ciência da Computação), AL (Engenharia de Alimentos) e SAD (Sistemas de Apoio à Decisão). Você deve especificar o seu departamento usando uma das abreviaturas acima, por exemplo, ```\department{CC}```.
 - ```\date{}{}``` -- Este comando é usado para definir o mês e ano da defesa. Por exemplo, Janeiro de 2016 deve ser inserido como ```\date{01}{2016}```.
 - ```\field{}``` -- Esse comando adiciona os campos da área de pesquisa do trabalho a ser desenvolvido de acordo com a classificação de área da ACM. Esse comando é utilizado somente quando a opção de classe ```project``` for escolhida para elaboração do documento.
 - ```\class{}``` -- Esse comando adiciona o nome de uma disciplina ao cabeçalho da capa. Esse comando é utilizado somente quando a opção de classe ```report``` for escolhida para elaboração do documento e é um campo opcional. A sua não utilização implica somente em não aparecer o nome da disciplina no cabeçalho.
