@@ -5,7 +5,7 @@
 \def\fileversion{v2.2.0}
 \def\filedate{2019/05/09}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass {uftex} [\filedate\ \fileversion\ Classe personalizada para o curso de Ciência da Computação da UFT - CUP]
+\ProvidesClass {uftex} %[\filedate\ \fileversion\ Classe personalizada para o curso de Ci\^encia da Computa\c{c}\~ao da UFT - CUP]
 
 \def\@@ptsize{12pt}
 \DeclareOption{10pt}{\def\@@ptsize{10pt}}
@@ -905,6 +905,42 @@ xrightmargin=10pt
      \local@doctype\ de \local@class
   \fi}
 }
+
+
+% ------------------------------------------------------------------------------------------------------ %
+\renewcommand\maketitle{%
+  %\pagenumbering{alph}
+  \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
+  \begin{titlepage}
+
+\begin{center}
+\includegraphics[scale=.3]{logouft}\\
+\MakeUppercase{\bf\frontcover@maintext}
+\end{center}
+
+  \vfill
+  \begin{center}
+  \nohyphens{\bf\MakeUppercase\local@title}\par
+  \vfill
+  \nohyphens{\bf
+ \count1=0
+    \@whilenum \count1<\@uftauthor \do{%
+    \ifcase\count1 % same as \ifnum0=\count1
+        \MakeUppercase{\csname uftAuthor:\the\count1 \endcsname \ }\par
+    \else
+        \MakeUppercase{\csname uftAuthor:\the\count1 \endcsname \ }\par
+    \fi
+    \advance\count1 by 1}
+ }\par
+  \vfill
+  \vspace*{\fill}
+  {\bf\frontpage@bottomtext}
+  \end{center}
+
+  \end{titlepage}
+  \global\let\maketitle\relax%
+  \global\let\and\relax}
+% ------------------------------------------------------------------------------------------------------ %
 }
 % ------------------------------------------------------------------------------------------------------ %
 % Fim Relatório
