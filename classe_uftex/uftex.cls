@@ -955,7 +955,7 @@ xrightmargin=10pt
   \renewcommand{\@degreename}{Especialização}
   \renewcommand{\local@degname}{Especialista}
   \renewcommand{\foreign@degname}{Specialist}
-  \newcommand{\local@program}{Pós-Graduação \textit{Latu Senso}}
+  \newcommand{\local@program}{Pós-Graduação \textit{Lato Sensu}}
 
 \renewcommand\approvepage@maintext{
   \local@doctype\ apresentado à UFT -- \local@universityname\ -- Câmpus Universitário de \local@cityname , Curso de \local@program\ em \local@deptname\ foi avaliado como requisito parcial para a obtenção do certificado de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
