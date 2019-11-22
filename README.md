@@ -13,7 +13,7 @@ A classe _uftex_ vem pré-configurada para cinco tipos de documentos distintos, 
 - ```tcc1``` -- devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso I.
 - ```tcc2``` -- devido à mudança de grade do curso e na uma tentativa de generalizar à outros curso o projeto, esse opção cria uma capa formatada e folha de rosto ao documento, com o rótulo de Trabalho de Conclusão de Curso II.
 - ```project``` -- utilizada para estilização do documento para criação de um pré-projeto do trabalho. Essa opção deve ser utilizada em conjunto com a opção ```tcc```, ```tcc1``` ou ```tcc2```.
-- ```latusenso``` -- utilizada para estilização do documento com o rótulo de Pós-Graduação _Latu Senso_.
+- ```latosensu``` -- utilizada para estilização do documento com o rótulo de Pós-Graduação _Latu Senso_.
 
 Você pode especificar a opção de documento escolhida através do 
 
