@@ -334,7 +334,16 @@ xrightmargin=10pt
   \let\ps@plain\ps@empty
   \pagestyle{empty}
   \makefrontpage
-  \pagebreak
+  %\pagebreak
+  %\makepageapprove
+}
+%------------------------------------------------------------------------------------------------------%
+\newcommand\pageapprove{
+  \cleardoublepage
+  \@mainmatterfalse
+  \let\oldplain\ps@plain
+  \let\ps@plain\ps@empty
+  \pagestyle{empty}
   \makepageapprove
 }
 % ------------------------------------------------------------------------------------------------------ %
@@ -893,6 +902,15 @@ xrightmargin=10pt
 \let\oldplain\ps@plain
 \let\ps@plain\ps@empty
 \pagestyle{empty}
+}
+% ------------------------------------------------------------------------------------------------------ %
+\newcommand\pageapprove{%
+  \cleardoublepage
+  \@mainmatterfalse
+  \let\oldplain\ps@plain
+  \let\ps@plain\ps@empty
+  \pagestyle{empty}
+  \makepageapprove
 }
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\frontcover@maintext{
