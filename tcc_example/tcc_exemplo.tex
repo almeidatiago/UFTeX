@@ -55,16 +55,24 @@
   \foreignkeyword{Bachelor Thesis}
   \foreignkeyword{Scientific Writing}
   \foreignkeyword{University Extension}
-  % ---- Comando responsável por criar a capa do trabalho e/ou folha de resto conforme a configuração exigida
-  \maketitle
+  
+  % ---- Comando responsável por criar a capa do trabalho, logo em seguida está o comando que insere a folha de rosto conforme a configuração exigida
+ \maketitle
 
+% Esse comando Insere a Folha de Rosto
   \frontmatter
 
   % ----------------------------------------------------------------------------------------------------- %
   %  Este trecho deve ser inserido somente no caso do TCC2 já na versão FINAL
   % ----------------------------------------------------------------------------------------------------- %
   \includepdf{ficha_catalografica}
-  \includepdf{ata_de_aprovacao}
+  
+  % ----------------------------------------------------------------------------------------------------- %
+  % Esse comando insere a Folha de Aprovação
+  \pageapprove
+  
+  % A Ata de aprovacao nao deve fazer parte do TCC 2, mas deve-se incluir a folha de aprovacao assinada pelos membros da banca
+  %\includepdf{ata_de_aprovacao}
   % ----------------------------------------------------------------------------------------------------- %
   \dedication{A algu\'em cujo valor \'e digno desta dedicat\'oria.}
 
