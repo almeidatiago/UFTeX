@@ -52,7 +52,35 @@ Mais de um orientador pode ser adicionado, para o caso de trabalhos co-orientado
 - ```\field{}``` -- Esse comando adiciona os campos da área de pesquisa do trabalho a ser desenvolvido de acordo com a classificação de área da ACM. Esse comando é utilizado somente quando a opção de classe ```project``` for escolhida para elaboração do documento.
 - ```\class{}``` -- Esse comando adiciona o nome de uma disciplina ao cabeçalho da capa. Esse comando é utilizado somente quando a opção de classe ```report``` for escolhida para elaboração do documento e é um campo opcional. A sua não utilização implica somente em não aparecer o nome da disciplina no cabeçalho.
 
-### Folha de rosto
+### Folha de Rosto
+É construída juntamente com a capa.
+
+A Folha de Rosto é composta pelos seguintes itens na mesma ordem com que são apresentados:
+
+- autoria (centralizado e destacado em caixa alta e em negrito);
+- título (centralizado, negrito e caixa alta);
+- subtítulo (se houver);
+- especificação da natureza, objetivo e nome da instituição de ensino a que vai ser
+submetido o trabalho e área de concentração;
+- orientador com titulação máxima;
+- co-orientador (se houver) e titulação máxima;
+- local e ano de publicação.
+
+
+### Ficha Catalográfica (Para TCC2)
+A Ficha Catalográfica é inserida após a defesa de TCC2. Ela deve vir imediatamente após a folha de rosto e antes da folha de aprovação.
+
+A Ficha Catalográfica localiza-se na parte inferior da página no verso da folha de rosto, constando os dados que identificam o trabalho de acordo com o padrão internacional em vigor Código Anglo Americano (FEDERAÇÃO BRASILEIRA DE ASSOCIAÇÕES DE
+BIBLIOTECÁRIOS, 2002) e obedecendo a uma dimensão de 7,5 X 12,5 cm. Elaboração pelo
+Sistema Eletrônico de Geração de Fichas Catalográfica da UFT, conforme tutorial.
+
+Disponível em: https://sistemas.uft.edu.br/ficha/
+
+A Ficha Catalográfica não é gerada por esse template, deve ser inserida posteriormente.
+
+
+### Folha de Aprovação
+
 
 Este elemento também é construída a partir do ```\maketitle```, se as opções escolhidas no documento forem: ```tcc```, ```tcc1``` ou ```tcc2```. 
 	
@@ -452,3 +480,4 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
  howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
 }
 ```
+# ufttex
