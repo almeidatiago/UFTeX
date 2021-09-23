@@ -387,7 +387,7 @@ xrightmargin=10pt
   \begin{titlepage}
 
 \begin{center}
-\includegraphics[scale=.3]{uftex/logouft}\\
+\includegraphics[scale=.3]{logouft}\\
 \MakeUppercase{\bf\frontcover@maintext}
 \end{center}
 
