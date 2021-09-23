@@ -334,17 +334,8 @@ xrightmargin=10pt
   \let\ps@plain\ps@empty
   \pagestyle{empty}
   \makefrontpage
-  %\pagebreak
+  \pagebreak
   %\makepageapprove
-}
-%------------------------------------------------------------------------------------------------------%
-\newcommand\pageapprove{
-  \cleardoublepage
-  \@mainmatterfalse
-  \let\oldplain\ps@plain
-  \let\ps@plain\ps@empty
-  \pagestyle{empty}
-  \makepageapprove
 }
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand*{\ps@plain}{%
@@ -396,7 +387,7 @@ xrightmargin=10pt
   \begin{titlepage}
 
 \begin{center}
-\includegraphics[scale=.3]{logouft}\\
+\includegraphics[scale=.3]{uftex/logouft}\\
 \MakeUppercase{\bf\frontcover@maintext}
 \end{center}
 
@@ -902,15 +893,6 @@ xrightmargin=10pt
 \let\oldplain\ps@plain
 \let\ps@plain\ps@empty
 \pagestyle{empty}
-}
-% ------------------------------------------------------------------------------------------------------ %
-\newcommand\pageapprove{%
-  \cleardoublepage
-  \@mainmatterfalse
-  \let\oldplain\ps@plain
-  \let\ps@plain\ps@empty
-  \pagestyle{empty}
-  \makepageapprove
 }
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\frontcover@maintext{
