@@ -480,4 +480,3 @@ Sabe-se que os dados bibliográficos podem ser facilmente mantidos com o auxíli
  howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
 }
 ```
-# ufttex
