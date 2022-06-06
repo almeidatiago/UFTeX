@@ -640,5 +640,3 @@ tag:
     howpublished= {\url{http://www.gnu.org/copyleft/gpl.html}},
    }
 
-ufttex
-======
