@@ -1,3 +1,6 @@
 [submodule "UFTPIBIC"]
 	path = UFTPIBIC
 	url = https://github.com/almeidatiago/UFTPIBIC.git
+[submodule "UFTDocs"]
+	path = UFTDocs
+	url = https://github.com/almeidatiago/UFTDocs.git
