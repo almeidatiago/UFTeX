@@ -26,10 +26,6 @@ trabalho do aluno no momento da produção do texto em *LaTeX*. A classe
 *uftex* vem pré-configurada para cinco tipos de documentos distintos,
 são eles:
 
--  ``report`` – usada de forma genérica. Pode ser utilizada em
-   relatórios de experimentos, aulas, trabalhos, etc.. Esse comando cria
-   somente permite que seja criada somente uma capa simples e a inclusão
-   de vários autores ao mesmo documento.
 -  ``tcc`` – devido à mudança de grade do curso e na uma tentativa de
    generalizar à outros curso o projeto, esse opção cria uma capa
    formatada e folha de rosto ao documento, com o rótulo de Trabalho de
