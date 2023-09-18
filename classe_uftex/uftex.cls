@@ -345,7 +345,6 @@ xrightmargin=10pt
     \reset@font
     \hfil
     \thepage
-    % \hfil % removed for aligning to the right
   }%
   \let\@evenfoot\@empty
   \let\@evenhead\@oddhead
@@ -358,7 +357,6 @@ xrightmargin=10pt
   \cleardoublepage
   \def\current@chapid{#1}%
   \zref@setcurrent{chaptitle}{#2}%
-  %\chapter{#2}%
   \zlabel{chap:#1}%
 }
 
@@ -382,22 +380,20 @@ xrightmargin=10pt
 
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\maketitle{%
-  %\pagenumbering{alph}
   \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
-  \begin{titlepage}
-
+ \begin{titlepage}
 \begin{center}
 \includegraphics[scale=.3]{logouft}\\
+\setstretch{1}
 \MakeUppercase{\bf\frontcover@maintext}
 \end{center}
-
-  \vfill
+  %
   \begin{center}
+  \vspace{4cm}
+  \nohyphens{\MakeUppercase{\bf\@authname\ \@authsurn}}\par
+  \vspace{4cm}
   \nohyphens{\bf\MakeUppercase\local@title}\par
   \vfill
-  \nohyphens{\MakeUppercase{\bf\@authname\ \@authsurn}}\par
-  \vfill
-  \vspace*{\fill}
   {\bf\frontpage@bottomtext}
   \end{center}
 
@@ -407,13 +403,14 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\makefrontpage{%
   \begin{center}
-    \MakeUppercase{\@authname\ \@authsurn}\par
-    \vfill
-    \nohyphens{\MakeUppercase\local@title}\par
+  {\bf \@authname\ \@authsurn}\par
+  \vfill
+   \nohyphens{\bf \local@title}\par
   \end{center}
   \vfill
   \begin{flushright}
   \begin{minipage}{8.45cm}
+  \setstretch{1}
   \frontpage@maintext
   \end{minipage}\par
  \end{flushright}
@@ -422,13 +419,14 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\makepageapprove{%
   \begin{center}
-    \MakeUppercase{\@authname\ \@authsurn}\par
+   {\bf \@authname\ \@authsurn} \par
     \vfill
-    \nohyphens{\MakeUppercase\local@title}\par
+    \nohyphens{\bf \local@title}\par
   \end{center}
   \vfill
   \begin{flushright}
   \begin{minipage}{8.45cm}
+  \setstretch{1}
   \approvepage@maintext
   \end{minipage}
  \end{flushright}
@@ -439,7 +437,6 @@ xrightmargin=10pt
 
 \noindent Banca Examinadora:
      \begin{center}
-  %\begin{flushright}
         \count1=0
         \@whilenum \count1<\@examiner \do {
             \vskip26\p@ \baselineskip12pt
@@ -447,7 +444,6 @@ xrightmargin=10pt
         \eqmakebox[signture@list][c]{%
             \ \ \ \protect\csname uftExaminer:\the\count1 \endcsname\ \ \ }\\
             \advance\count1 by 1}
-  %\end{flushright}
      \end{center}
 }
 % ------------------------------------------------------------------------------------------------------ %
@@ -460,8 +456,6 @@ xrightmargin=10pt
   \begin{center}
   {\small
     \setlength{\fboxsep}{3mm}
-    %\framebox[120mm][c]{\makebox[5mm][c]{}%
-    %\noindent\makebox[\linewidth]{\hdashrule{\paperwidth}{1pt}{1pt}}
       \begin{minipage}{135mm}
       {\bf\centering Dados Internacionais de Catalogação na Publicação (CIP) \par
       Sistema de Bibliotecas da \local@universityname \par}
@@ -559,7 +553,7 @@ xrightmargin=10pt
     \vspace*{\fill}
     \begin{flushright}
       \begin{minipage}{60mm}
-        \raggedleft \it \normalsize \@dedic
+        \raggedleft \normalsize \@dedic
       \end{minipage}
     \end{flushright}}
 % ------------------------------------------------------------------------------------------------------ %
@@ -658,7 +652,6 @@ xrightmargin=10pt
   \@mkboth{\MakeUppercase\glossaryname}%
   {\MakeUppercase\glossaryname}%
   \chapter*{\glossaryname}%
-  %\addcontentsline{toc}{chapter}{\glossaryname}
   \list{}
   {\setlength{\listparindent}{0in}%
    \setlength{\labelwidth}{1.0in}%
@@ -711,31 +704,11 @@ xrightmargin=10pt
 
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
-   \nohyphens{%
- %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
-    \count1=0
-    %\toks@={}
-    \@whilenum \count1<\@advisor \do{%
-    \ifcase\count1 % same as \ifnum0=\count1
-        \csname uftAdvisorDegree:\the\count1 \endcsname \ 
-        \csname uftAdvisorName:\the\count1 \endcsname \ 
-        \csname uftAdvisorSurname:\the\count1 \endcsname . \par
-    \fi
-    \advance\count1 by 1}
-    %\the\toks@
-  %\end{tabularx}
-  }
+  \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname .
 
- \vspace{1.5cm}
+ \vspace{.5cm}
   \nohyphens{%
- %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
     \count1=0
-    %\toks@={}
     \@whilenum \count1<\@advisor \do{%
     \ifcase\count1 % same as \ifnum0=\count1
         \local@advisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
@@ -747,8 +720,6 @@ xrightmargin=10pt
         \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
     \fi
     \advance\count1 by 1}
-    %\the\toks@
-  %\end{tabularx}
   } \par
 }
 }
@@ -786,7 +757,6 @@ xrightmargin=10pt
 
 \renewenvironment{thebibliography}[1]
      {\section*{\bibname}% <-- this line was changed from \chapter* to \section*
-      %\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
@@ -806,9 +776,7 @@ xrightmargin=10pt
 
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\maketitle{%
-  %\pagenumbering{alph}
-  \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
-  %\begin{titlepage}
+\ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
 \begin{minipage}{0.2\textwidth}% adapt widths of minipages to your needs
 \includegraphics[width=.8\linewidth]{logouft}
 \end{minipage}%
@@ -845,11 +813,7 @@ xrightmargin=10pt
         \advance\count1 by 1}}\par 
   
   \nohyphens{%
- %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
     \count1=0
-    %\toks@={}
     \@whilenum \count1<\@advisor \do{%
     \ifcase\count1 % same as \ifnum0=\count1
         {\bf\local@advisorstring}: \csname uftAdvisorDegree:\the\count1 \endcsname \ 
@@ -861,89 +825,11 @@ xrightmargin=10pt
         \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
     \fi
     \advance\count1 by 1}
-    %\the\toks@
-  %\end{tabularx}
   } \par
 }
 }
 % ------------------------------------------------------------------------------------------------------ %
 % Fim Pré-Projeto
-% ------------------------------------------------------------------------------------------------------ %
-
-% ------------------------------------------------------------------------------------------------------ %
-% Inicio Relatório
-% ------------------------------------------------------------------------------------------------------ %
-\DeclareOption{report}{
-
-\newcommand\local@doctype{Relatório}
-\newcommand\@degreename{Acadêmico}
-
-% ------------------------------------------------------------------------------------------------------ %
-\newcount\@uftauthor\@uftauthor0
-\renewcommand\author[2]{%
-  \global\def\@authname{#1}
-  \global\def\@authsurn{#2}
-  \global\@namedef{uftAuthor:\expandafter\the\@uftauthor}{#1\ #2}
-  \global\advance\@uftauthor by 1
-}
-% ------------------------------------------------------------------------------------------------------ %
-\renewcommand\frontmatter{%
-  \cleardoublepage
-  \@mainmatterfalse
-\let\oldplain\ps@plain
-\let\ps@plain\ps@empty
-\pagestyle{empty}
-}
-% ------------------------------------------------------------------------------------------------------ %
-\renewcommand\frontcover@maintext{
-     \sloppy\nohyphens{\local@universityname \par
-        Câmpus Universitário de Palmas\par
-   \ifnum\@class=0 %\endcsname\relax
-     \local@deptstring\ de \local@deptname
-   \else
-     \local@deptstring\ de \local@deptname\par
-     \local@doctype\ de \local@class
-  \fi}
-}
-
-
-% ------------------------------------------------------------------------------------------------------ %
-\renewcommand\maketitle{%
-  %\pagenumbering{alph}
-  \ltx@ifpackageloaded{hyperref}{\uftex@hypersetup}{}%
-  \begin{titlepage}
-
-\begin{center}
-\includegraphics[scale=.3]{logouft}\\
-\MakeUppercase{\bf\frontcover@maintext}
-\end{center}
-
-  \vfill
-  \begin{center}
-  \nohyphens{\bf\MakeUppercase\local@title}\par
-  \vfill
-  \nohyphens{\bf
- \count1=0
-    \@whilenum \count1<\@uftauthor \do{%
-    \ifcase\count1 % same as \ifnum0=\count1
-        \MakeUppercase{\csname uftAuthor:\the\count1 \endcsname \ }\par
-    \else
-        \MakeUppercase{\csname uftAuthor:\the\count1 \endcsname \ }\par
-    \fi
-    \advance\count1 by 1}
- }\par
-  \vfill
-  \vspace*{\fill}
-  {\bf\frontpage@bottomtext}
-  \end{center}
-
-  \end{titlepage}
-  \global\let\maketitle\relax%
-  \global\let\and\relax}
-% ------------------------------------------------------------------------------------------------------ %
-}
-% ------------------------------------------------------------------------------------------------------ %
-% Fim Relatório
 % ------------------------------------------------------------------------------------------------------ %
 
 
@@ -971,11 +857,7 @@ xrightmargin=10pt
 \renewcommand\frontpage@maintext{
   \sloppy\nohyphens{\local@doctype\ apresentado à \local@universityname\ como requisito parcial para obten{\c c}{\~ a}o do certificado de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
    \nohyphens{%
- %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
     \count1=0
-    %\toks@={}
     \@whilenum \count1<\@advisor \do{%
     \ifcase\count1 % same as \ifnum0=\count1
         \csname uftAdvisorDegree:\the\count1 \endcsname \ 
@@ -983,17 +865,11 @@ xrightmargin=10pt
         \csname uftAdvisorSurname:\the\count1 \endcsname . \par
     \fi
     \advance\count1 by 1}
-    %\the\toks@
-  %\end{tabularx}
   }
 
  \vspace{1.5cm}
   \nohyphens{%
- %\begin{tabularx}{11.45cm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
-    %\local@advisorstring: %&
-    %\local@advisorstring:
     \count1=0
-    %\toks@={}
     \@whilenum \count1<\@advisor \do{%
     \ifcase\count1 % same as \ifnum0=\count1
         \local@advisorstring : \csname uftAdvisorDegree:\the\count1 \endcsname \ 
@@ -1005,8 +881,6 @@ xrightmargin=10pt
         \csname uftAdvisorSurname:\the\count1 \endcsname \ \par
     \fi
     \advance\count1 by 1}
-    %\the\toks@
-  %\end{tabularx}
   } \par
 }
 }
